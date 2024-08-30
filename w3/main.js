@@ -1,6 +1,3 @@
-
-
-
 function determineHouseHoldPts(numberInHousehold) {
     console.log("Inside the function")
     if (numberInHousehold === 1) {
