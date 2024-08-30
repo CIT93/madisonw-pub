@@ -29,3 +29,20 @@ let carbonFootprintPoints = 0;
 
 determineHouseHoldPts(3)
 determineHouseHoldPts(4)
+
+function determinehouseHoldSizePts(householdSize) {
+    if (householdSize === "large") {
+        carbonFootprintPoints = carbonFootprintPoints + 10;
+    } else if (householdSize === "medium") {
+        carbonFootprintPoints = carbonFootprintPoints + 7;
+    } else if (householdSize === "small") {
+        carbonFootprintPoints = carbonFootprintPoints + 4;
+    } else if (householdSize === "apartment") {
+        carbonFootprintPoints = carbonFootprintPoints + 2;
+    } else {
+        console.log("no update to points")
+    }
+    console.log(`Based on the house size ${householdSize} , the points would be ${carbonFootprintPoints}`)   
+}
+
+determinehouseHoldSizePts("medium")
