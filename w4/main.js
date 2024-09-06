@@ -65,7 +65,11 @@ start (4,"large");
 start (3,"medium");
 start (2,"small");
 start (8,"large");
-start (6,"medium");
-
+start (6,"apartment");
+start (1,"large");
+start (7,"small");
+start (2,"apartment");
+start (10,"large");
+start (1,"medium");
 
 displayOutput()
