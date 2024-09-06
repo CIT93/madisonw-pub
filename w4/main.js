@@ -11,9 +11,8 @@ function determineHouseSizePts (size) {
     houseSizePoints = 4
   } else if (size === "apartment") {
     houseSizePoints = 2
-  }
-  
-  return houseSizePoints
+  } 
+  return houseSizePoints;
 }
 
 
@@ -35,16 +34,12 @@ function determineHouseHoldPts(numberInHousehold) {
       houseHoldPoints = 4;
     } else if (numberInHousehold > 6) {
       houseHoldPoints = 2;
-    } else {
-        console.log("no update to points")
-    }
-    
+    } 
     return houseHoldPoints
   }
 
 
-console.log("global scope")
-//let carbonFootprintPoints = 0;
+
 
 function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
@@ -53,6 +48,17 @@ function start(houseHoldMembers, houseSize) {
   cfpData.push([houseHoldMembers, houseSize, houseHoldPTS, houseSizePTS, total])
 }
 
+function displayOutput(){
+  for (arr of cfpData){
+    console.log(arr)
+    const output = document.getElementById("output");
+    const newP = document.createElement("p");
+    newP.textContent = `If you live with ${arr[0]} people, add ${arr[2]} to your score. If you live in a ${arr[1]} house, add ${arr[3]} to your score. Your Carbon Footprint total should be ${arr[4]}`
+    output.appendChild(newP)
+  }
+}
+
+
 
 start (5,"apartment");
 start (4,"large");
@@ -60,9 +66,6 @@ start (3,"medium");
 start (2,"small");
 start (8,"large");
 start (6,"medium");
-start (1,"apartment");
-start (7,"small");
-start (9,"large");
-start (7,"medium");
+
 
 displayOutput()
