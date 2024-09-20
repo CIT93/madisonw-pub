@@ -47,19 +47,23 @@ function start(houseHoldMembers, houseSize) {
   const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
   const houseSizePTS = determineHouseSizePts(houseSize);
   const total = houseHoldPTS + houseSizePTS;
+  const firstName = FORM.firstname.value
+  const lastName = FORM.lastname.value
   cfpData.push( {
     houseM: houseHoldMembers,
     houseS: houseSize,
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
+    fname: firstName,
+    lname: lastName
   } )
 }
 
 function displayOutput(){
    for (obj of cfpData){
     const newH2 = document.createElement("h2");
-    newH2.textContent = `Carbon Footprint ${obj.cfpTotal}`;
+    newH2.textContent = `${obj.fname} ${obj.lname}'s Carbon Footprint:${obj.cfpTotal}`;
      const newH3 = document.createElement("h3");
      newH3.textContent = 'Based on the number in and size of home'
      const newP = document.createElement("p");
