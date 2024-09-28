@@ -22,7 +22,7 @@ function renderTblHeading(data){
     const table = renderTblHeading()
     const tbody = document.createElement("tbody")
     const tr = document.createElement("tr")
-    const trTextArr = ["Madison",4,"Medium", 15,"Edit/Del"]
+    const trTextArr = [fname,houseM,houseS,cfptotal]
     trTextArr.forEach(function(text){
       const td = document.createElement("td")
       td.textContent = text
@@ -39,11 +39,19 @@ function renderTblHeading(data){
     tbody.appendChild(tr)
     table.appendChild(tbody)
     console.log(table)
-  
+    cfpData.push( {
+      houseM: houseHoldMembers,
+      houseS: houseSize,
+      houseMPTS: houseHoldPTS,
+      houseSPTS: houseSizePTS,
+      cfpTotal: total,
+      fname: firstName,
+      lname: lastName
+    } )
   
   
     TBL.appendChild(table)
-  
+   
   }
 
   export {renderTbl}
