@@ -24,7 +24,7 @@ function renderTblHeading(data){
     const table = renderTblHeading()
     const tbody = document.createElement("tbody")
     
-    //const trTextArr = [fname,houseM,houseS,cfptotal]
+    
     data.forEach(function(obj){
       const tr = document.createElement("tr")
       const tdName = document.createElement("td")
