@@ -1,8 +1,8 @@
 const TBL =  document.getElementById("tab-data")
-
+const FORM = document.getElementById("form")
 
 function renderTblHeading(data){
-    TBL.innerHTML = ""
+    
     const table = document.createElement("table")
     const thead = document.createElement("thead")
     const tr = document.createElement("tr")
@@ -18,7 +18,7 @@ function renderTblHeading(data){
     return table
    
   }
-  function renderTblBtn(index, data){
+  function renderTblBtn(obj, index, data){
     const td = document.createElement("td")
     const btnEdit = document.createElement("button")
     const btnDel = document.createElement("button")
@@ -31,14 +31,18 @@ function renderTblHeading(data){
       
       data.splice(index, 1);
       renderTbl(data)
-      renderTblHeading(data)
+      
     
 
 
     })
     btnEdit.addEventListener('click', function(e){
-      FORM[1, 2, 3, 4]
-      data.splice(index)
+      FORM[1].value = obj.fname
+      FORM[2].value = obj.lname
+      FORM[3].value = obj.houseM
+      FORM[4].value = obj.houseS
+
+      data.splice(index, 1);
       renderTbl(data)
     })
     return td
@@ -57,7 +61,7 @@ function renderTblHeading(data){
           tr.appendChild(td)
         } 
       }
-      const td = renderTblBtn(index, data )
+      const td = renderTblBtn(obj, index, data )
       tr.appendChild(td)
       tbody.appendChild(tr)
     
@@ -68,10 +72,14 @@ function renderTblHeading(data){
    
   }
    function renderTbl(data) {
-    const table = renderTblHeading()
-    const tbody = renderTblBody(data)
-    table.appendChild(tbody)
-    TBL.appendChild(table)
+    TBL.innerHTML = ""
+    if(data.length !== 0 ){
+      const table = renderTblHeading()
+      const tbody = renderTblBody(data)
+      table.appendChild(tbody)
+      TBL.appendChild(table)
+
+    } 
    
   }
 
