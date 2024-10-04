@@ -37,7 +37,9 @@ function renderTblHeading(data){
 
     })
     btnEdit.addEventListener('click', function(e){
-      
+      FORM[1, 2, 3, 4]
+      data.splice(index)
+      renderTbl(data)
     })
     return td
     
@@ -49,7 +51,7 @@ function renderTblHeading(data){
       const tr = document.createElement("tr")
       for(const [key, value] of Object.entries(obj)){
         console.log (`key ${key} value ${value}`)
-        if(key !== "lastName" && key !== "houseMPTS" && key !== "houseSPTS"){
+        if(key !== "lname" && key !== "houseMPTS" && key !== "houseSPTS"){
           const td = document.createElement("td")
           td.textContent = value
           tr.appendChild(td)

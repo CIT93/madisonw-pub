@@ -25,7 +25,7 @@ function start(houseHoldMembers, houseSize) {
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
-    //lname: lastName
+    lname: lastName
   } )
 }
 
