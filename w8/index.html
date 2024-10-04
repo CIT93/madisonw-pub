@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title> Week 8 - Carbon Footprint  </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+        <legend>WHAT IS YOUR CARBON FOOTPRINT</legend>
+        <div>
+            <label>First Name:</label>
+            <input type="text" name="firstname" min="1" max="20" required>
+        </div>
+        <div>
+            <label for="">Last Name:</label>
+            <input type="text" name="lastname" min="1" max="20"required>
+        </div>
+        <div>
+            <label for="">Count the members of your household. </label>
+            <input type="number" name="housem" min="1" max="6" required>
+        </div>
+        <div>
+            <label for=""> Consider the size of your home.</label>
+            <!--<input type="text" name="houses" required/> -->
+            <select name="houses" required>
+                <option value="">---Please enter size of home--- </option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+                <option value="apartment">Apartment</option>
+            </select>
+        </div>
+        <button type="submit">Submit</button>
+        </fieldset>
+       
+    </form>
+    <div id="output"> </div>
+    <div id="tab-data"></div>
+    <!--table>
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Household</th>
+            <th>House Size</th>
+            <th>Carbon Footprint</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr>
+               <td>Madison</td>
+               <td>3</td>
+               <td>Large</td>
+               <td>20</td>
+               <td><button>Edit</button>
+                <button>Del</button>
+               </td> 
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
