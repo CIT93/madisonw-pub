@@ -18,3 +18,9 @@ table, th, td {
 tbody tr:nth-child(odd) {
     background-color: rgb(141, 141, 90);
 }
+.error {
+    color: red;
+}
+.invalid {
+    border-color: red;
+}

@@ -13,11 +13,13 @@
         <legend>WHAT IS YOUR CARBON FOOTPRINT</legend>
         <div>
             <label>First Name:</label>
-            <input type="text" name="firstname" min="1" max="20" >
+            <input type="text" name="firstname" id="firstName" min="1" max="20" >
+            <span id="firstNameError" class="error" ></span>
         </div>
         <div>
             <label for="">Last Name:</label>
-            <input type="text" name="lastname" min="1" max="20">
+            <input type="text" name="lastname" id="lastName" min="1" max="20">
+            <span id="lastNameError" class="error" ></span>
         </div>
         <div>
             <label for="">Count the members of your household. </label>
@@ -35,6 +37,7 @@
             </select>
         </div>
         <button type="submit">Submit</button>
+        <span id="submitError" class="error" ></span>
         </fieldset>
        
     </form>

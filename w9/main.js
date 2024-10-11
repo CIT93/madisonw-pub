@@ -1,9 +1,13 @@
 import { renderTbl } from "./render.js";
 import { determineHouseHoldPts, determineHouseSizePts } from "./cbfpt.js"
-import { FORM, lastnameV, firstnameV } from "./global.js";
+import { FORM, } from "./global.js";
 import {saveLS, cfpData} from "./storage.js"
 
+const firstNameEl = document.getElementById('firstName')
 
+const lastNameEl = document.getElementById('lastName')
+
+const submitEl = document.getElementById("submitError")
 
 
 function start(houseHoldMembers, houseSize) {
@@ -27,36 +31,35 @@ function start(houseHoldMembers, houseSize) {
 
 renderTbl(cfpData)
 
-firstnameV.addEventListener('blur', validateField);
-lastnameV.addEventListener('blur', validateField);
-
-
-
- 
-
-
-
-
+firstNameEl.addEventListener('blur', validateField);
+lastNameEl.addEventListener('blur', validateField);
 
 
 
 FORM.addEventListener('submit', function(e){
   e.preventDefault()
-  const firstNameIsValid = firstnameV.value !== ''
-  const lastNameIsValid = lastnameV.value !== ''
+  
   const firstName = FORM.firstname.value 
   const lastName = FORM.lastname.value
+  const firstNameIsValid = firstNameEl.value !== ''
+  const lastNameIsValid = lastNameEl.value !== ''
 if (firstNameIsValid === true && lastNameIsValid === true)  {
+  submitEl.textContent = ''
   const houseMembers = parseInt(FORM.housem.value)
   const houseSize = FORM.houses.value
   start(houseMembers,houseSize)
   saveLS(cfpData)
   renderTbl(cfpData)
+  FORM.reset()
+} else {
+  
+  document.getElementById("submitError").textContent ="Form requires first and last name"
 }
 
-FORM.reset()
+
 
 })
+// Function to validate a single field
 function validateField (event) {
   const field = event.target.value;
   const fieldId = event.target.id;
