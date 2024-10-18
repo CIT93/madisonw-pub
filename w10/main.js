@@ -6,21 +6,20 @@ import {saveLS, cfpData} from "./storage.js"
 
 
 
-const start = (...houseData) => {
-  const [houseSize, houseHoldMembers] = houseData
-  const houseHoldPTS = determineHouseHoldPts(houseHoldMembers);
-  const houseSizePTS = determineHouseSizePts(houseSize);
+const start = (...i) => {
+  const houseHoldPTS = determineHouseHoldPts(i[2]);
+  const houseSizePTS = determineHouseSizePts(i[3]);
   const total = houseHoldPTS + houseSizePTS;
   const firstName = FORM.firstname.value
   const lastName = FORM.lastname.value
   cfpData.push( {
-    fname: firstName,
-    houseM: houseHoldMembers,
-    houseS: houseSize,
+    fname: i[0],
+    houseM: i[2],
+    houseS: i[3],
     houseMPTS: houseHoldPTS,
     houseSPTS: houseSizePTS,
     cfpTotal: total,
-    lname: lastName
+    lname: i[1]
   } )
 }
 

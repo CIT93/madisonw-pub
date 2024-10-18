@@ -9,7 +9,7 @@ const renderTblHeading = (data) =>{
     const tr = document.createElement("tr")
     const headingTextArr = ["Name","HouseHold","HouseSize","Footprint","Actions"]
 
-    headingTextArr.forEach(function(text){
+    headingTextArr.forEach(text => {
       const th = document.createElement("th");
       th.textContent = text
       tr.appendChild(th)
