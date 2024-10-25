@@ -1,0 +1,26 @@
+html {
+    font-size: 22px;
+}
+body {
+    background-color: #333;
+    color: antiquewhite;
+}
+input:in-range {
+    background-color: lightgreen;
+}
+input:out-of-range {
+    background-color: lightcoral;
+}
+table, th, td {
+    border:1px solid;
+    padding: 5px
+}
+tbody tr:nth-child(odd) {
+    background-color: rgb(141, 141, 90);
+}
+.error {
+    color: red;
+}
+.invalid {
+    border-color: red;
+}
