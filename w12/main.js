@@ -1,4 +1,7 @@
 const FORM = document.getElementById("form")
+const exercise = form.exercise.value
+const repsNumber = form.repsNumber.value
+const time = form.time.value
 
 const beginExercise = (exercise, repsNumber, time ) => {
     const output = document.getElementById("output")
@@ -6,13 +9,7 @@ const beginExercise = (exercise, repsNumber, time ) => {
 }
 
 FORM.addEventListener('submit', function(e){
-e.preventDefault();
-const exercise = form.exercise.value
-const repsNumber = form.repsNumber.value
-const time = form.time.value
-beginExercise(exercise, repsNumber, time)
-
-
+e.preventDefault();beginExercise(exercise, repsNumber, time)
 setTimeout(() => {
     output.textContent = "Stop Workout! Go take a break!🥤:D"
 }, time * 4000)
