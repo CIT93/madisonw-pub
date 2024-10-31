@@ -38,7 +38,7 @@ FORM.addEventListener('submit', function(e){
 if (FNAMEEL.value !== '' && LNAMEEL.value !== '')  {
   SUBMIT.textContent = ''
   //start(FNAMEEL.value,LNAMEEL.value, parseInt(FORM.housem.value),FORM.houses.value)
-  const fpObj = new FP(FNAMEEL.value,LNAMEEL.value, parseInt(FORM.housem.value),FORM.houses.value)
+  const fpObj = new FP(FNAMEEL.value,LNAMEEL.value, parseInt(FORM.housem.value),FORM.houses.value,FORM.food.value )
   //fpObj.houseHoldPoints()
   //fpObj.houseSizePoints()
   cfpData.push(fpObj)

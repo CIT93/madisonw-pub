@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEEK 12 - WORKOUT TIMER </title>
+    <script defer="" src="main.js"></script>
+    <style>
+        html {
+            font-size: 25px;
+        }
+        legend {
+            width: auto;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: bold;
+            font-size: larger;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: brown;
+            
+        }
+        fieldset {
+           text-align: center;
+           border-color: beige;
+        }
+        
+        body {
+            background-color: #E0A458;
+        }
+  
+    
+    </style>
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+            <legend>WORK-IT-OUT WORKOUT TIMER</legend>
+            <div>
+                <label>Type of Exercise:</label>
+                <select name="exercise" required>
+                    <option value="">---Please enter Exercise Type--- </option>
+                    <option value="Pull-ups">Pull-ups</option>
+                    <option value="Push-ups">Push-ups</option>
+                    <option value="Squats">Squats</option>
+                    <option value="Curls">Curls</option>
+                </select>
+            </div>
+            <div>
+                <label for="">Number of Reps:</label>
+                <input type="number" name="repsNumber" min="1" max="" required>
+            </div>
+            <div>
+                <label for="">Time:</label>
+                <input type="number" name="time" min="1" required/> 
+            </div>    
+            <button type="submit">Start Time!</button>
+
+        </fieldset>
+    </form>
+    
+    <div id="output"></div>
+</body>
+</html>
