@@ -1,0 +1,1 @@
+Doing that example did help refresh what I already knew of how functions pass and return values. Doing these examples helped me strengthen my knowledge of how things pass with functions as well as more terms like IIFE.
