@@ -7,7 +7,8 @@ class FP {
     foodChoice,
     foodSource,
     waterConsum,
-    DWandWM
+    DWandWM,
+    purchases
   ) {
     this.first = first,
     this.last = last,
@@ -16,6 +17,7 @@ class FP {
     this.foodChoice = foodChoice;
     this.foodSource = foodSource;
     this.waterConsumPoints = waterConsum;
+    this.purchasePoints = purchases
     this.DWandWM = DWandWM
     this.calhouseHoldPoints();
     this.calhouseSizePoints();
@@ -80,13 +82,18 @@ calWaterPoints() {
   this.WaterPoints = this.waterConsumPoints}
 }
 
+
+
+
+
   calTotal() {
     this.total =
       this.houseHoldPoints +
       this.houseSizePoints +
       this.foodChoicePoints +
       this.foodSourcePoints +
-      this.WaterPoints;
+      this.WaterPoints +
+      this.purchasePoints
   }
 }
 export {FP}

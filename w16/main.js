@@ -46,7 +46,8 @@ if (FNAMEEL.value !== '' && LNAMEEL.value !== '')  {
     e.target.foodChoice.value,
     e.target.foodSource.value,
     parseInt(e.target.water.value),
-    e.target.DWandWM.checked
+    e.target.DWandWM.checked,
+    parseInt(e.target.purchases.value)
   );
   cfpData.push(fpObj)
   saveLS(cfpData)

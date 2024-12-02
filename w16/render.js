@@ -71,9 +71,10 @@ const renderTblHeading = function(data){
       FORM.housem.value = obj.houseMembers
       FORM.houses.value = obj.houseSize
       FORM.foodChoice.value = obj.foodChoice
-      //FORM.water.value = obj.waterConsumPoints.toString()
-      FORM.water.value = obj.water
+      FORM.water.value = obj.waterConsumPoints.toString()
+      FORM.purchases.value = obj.purchasePoints.toString()
       FORM.DWandWM.checked = obj.DWandWM
+      
       onUpdate(index, data)
       
     })
