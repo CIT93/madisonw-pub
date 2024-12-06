@@ -1,0 +1,28 @@
+html {
+    font-size: 20px;
+    font-family: 'Trebuchet MS';
+}
+body {
+    background-color: #b47272;
+    color: rgb(53, 10, 34);
+}
+input:in-range {
+    background-color: lightgreen;
+}
+input:out-of-range {
+    background-color: lightcoral;
+}
+table, th, td {
+    border:1px solid;
+    padding: 5px;
+    border-color: rgb(167, 31, 31)
+}
+tbody tr:nth-child(odd) {
+    background-color: rgb(141, 141, 90);
+}
+.error {
+    color: red;
+}
+.invalid {
+    border-color: red;
+}

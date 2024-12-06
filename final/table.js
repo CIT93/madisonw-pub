@@ -1,22 +1,8 @@
 import { FORM, TBL } from "./global.js"
-import { saveLS } from "./storage.js"
+import { saveLS } from "./store.js"
 
 
-const calculateAvg = (data) => {
-  const reduceTotal = data.reduce((sum, ea) => sum + ea.total, 0)
-  const tableRef = document.getElementById("table-id")
-  let newTR = tableRef.insertRow(-1)
-  let newTD = newTR.insertCell(0)
-  let newTD_1 = newTR.insertCell(0)
-  let newTD_2 = newTR.insertCell(0)
-  //let newTD_3 = newTR.insertCell(0)
- // let newTD_4 = newTR.insertCell(0)
-  let newLabl = document.createTextNode(`Average Footprint`)
-  let newText = document.createTextNode(`${Math.floor(reduceTotal/data.length)}`)
-  newTD_1.appendChild(newLabl)
-  newTD.appendChild(newText)
 
-}
 
 
 
@@ -26,7 +12,7 @@ const renderTblHeading = function(data){
     table.setAttribute("id","table-id")
     const thead = document.createElement("thead")
     const tr = document.createElement("tr")
-    const headingTextArr = ["First","Last","Footprint Total","Actions"]
+    const headingTextArr = ["First","Day","Activity","Fulfill. Score","Actions"]
 
     headingTextArr.forEach(function(text){
       const th = document.createElement("th");
@@ -58,7 +44,7 @@ const renderTblHeading = function(data){
     td.appendChild(btnEdit)
     td.appendChild(btnDel)
     btnDel.addEventListener('click', function(e){
-      console.log("hello")
+      
       
       onUpdate(index, data)
     
@@ -67,13 +53,10 @@ const renderTblHeading = function(data){
     })
     btnEdit.addEventListener('click', function(e){
       FORM.firstName.value = obj.first
-      FORM.lastName.value = obj.last
-      FORM.housem.value = obj.houseMembers
-      FORM.houses.value = obj.houseSize
-      FORM.foodChoice.value = obj.foodChoice
-      FORM.water.value = obj.waterConsumPoints.toString()
-      FORM.purchases.value = obj.purchasePoints.toString()
-      FORM.DWandWM.checked = obj.DWandWM
+      FORM.todaysDate.value = obj.todaysDate
+      FORM.decidedActivity.value = obj.decidedActivity
+      FORM.energyScale.value = obj.energyScale
+      
       
       onUpdate(index, data)
       
@@ -87,7 +70,7 @@ const renderTblHeading = function(data){
     const tbody = document.createElement("tbody")
     data.forEach((obj, index) => {
       const tr = document.createElement("tr")
-      const keys = ["first","last" ,"total"]
+      const keys = ["first","todaysDate","decidedActivity","total"]
         keys.forEach(key => {
           const td = document.createElement("td")
           td.textContent = obj[key]
@@ -111,12 +94,11 @@ const renderTblHeading = function(data){
       const tbody = renderTblBody(data)
       table.appendChild(tbody)
       TBL.appendChild(table)
-      calculateAvg(data)
+      
     } 
    
   }
 
   export {renderTbl}
 
-  // noting code along to the best of my abilty but something is wrong with results but I'm having a hard figuring out why.
-  // Modules in javascript help put large scripts into chunks that can imported if needed. I have no questions.
+  

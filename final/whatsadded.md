@@ -1,0 +1,1 @@
+I added a spot for first names and hunger which will half the chosen energy scale number before its added to the activity points.

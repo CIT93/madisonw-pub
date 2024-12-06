@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="main.js"></script>
+    <title> Activity Fufillment Calculator </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="form">
+        <fieldset>
+        <legend>Activity Fufillment Calculator</legend>
+        <div>
+            <label>First Name:</label>
+            <input type="text" name="firstname" id="firstName" min="1" max="20" >
+            <span id="firstNameError" class="error" ></span>
+        </div>
+        
+        
+        <div>
+            <label for=""> Today's Date </label>
+            
+            <select name="todaysDate" required>
+                <option value="">---Enter day of the week--- </option>
+                <option value="monday">monday</option>
+                <option value="tuesday">tuesday</option>
+                <option value="wednesday">wednesday</option>
+                <option value="thursday">thursday</option>
+                <option value="friday">friday</option>
+                <option value="saturday">saturday</option>
+                <option value="sunday">sunday</option>
+            </select>
+        </div>
+        <div>
+            <label for="">How much energy do think you have? </label>
+            <input type="number" name="energyScale" min="1" max="10" required>
+        </div>
+        <div>
+        <label for="hunger">Are you hungry? </label> 
+        <input type="checkbox" id="hunger" name="hunger" checked="">
+       </div>
+        <div>
+            <label for=""> Out of these activity choices, what are you thinking of doing?</label>
+            
+            <select name="decidedActivity" required>
+                <option value="">---Enter Decided Activity--- </option>
+                <option value="Drawing">Drawing</option>
+                <option value="Exercising">Exercising</option>
+                <option value="Watching TV">Watching TV</option>
+                <option value="Sleeping">Sleeping</option>
+                <option value="Cleaning Up">Cleaning Up</option>
+                
+            </select>
+        </div>
+       
+        
+        <button type="submit">Submit</button>
+        <span id="submitError" class="error" ></span>
+        </fieldset>
+       
+    </form>
+    
+    <div id="tab-data"></div>
+    
+</body>
+</html>
