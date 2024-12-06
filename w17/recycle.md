@@ -1,0 +1,1 @@
+I think what could be the solution for identifying waste is potentially making an if else function that has the calculations in the fp.
